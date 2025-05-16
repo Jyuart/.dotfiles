@@ -6,3 +6,7 @@ export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 
 # To get rid of les hist file (can be just moved if needed)
 export LESSHISTFILE=-
+
+# Editor
+export VISUAL=nvim
+export EDITOR="$VISUAL"

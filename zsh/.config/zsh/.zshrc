@@ -12,3 +12,10 @@ compinit
 # End of lines added by compinstall
 
 source $ZDOTDIR/aliases
+
+# fnm
+FNM_PATH="/home/jyuart/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/home/jyuart/.local/share/fnm:$PATH"
+  eval "`fnm env`"
+fi
