@@ -1,3 +1,6 @@
+# Prompt
+PROMPT='%F{cyan}%2~%f $ '
+
 # Lines configured by zsh-newuser-install
 HISTFILE=$ZDOTDIR/.histfile
 HISTSIZE=1000
@@ -13,9 +16,12 @@ compinit
 
 source $ZDOTDIR/aliases
 
-# fnm
+# fnm node
 FNM_PATH="/home/jyuart/.local/share/fnm"
 if [ -d "$FNM_PATH" ]; then
   export PATH="/home/jyuart/.local/share/fnm:$PATH"
   eval "`fnm env`"
 fi
+
+# cargo rust
+export PATH="$HOME/.cargo/bin:$PATH"

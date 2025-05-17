@@ -10,3 +10,8 @@ export LESSHISTFILE=-
 # Editor
 export VISUAL=nvim
 export EDITOR="$VISUAL"
+
+# Go installation
+export GOPATH=$HOME/.local/go
+export PATH=$GOPATH/bin:$PATH
+export PATH=$PATH:/usr/local/go/bin
