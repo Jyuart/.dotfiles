@@ -1,9 +1,9 @@
 [submodule "nvim/.config/nvim"]
 	path = nvim/.config/nvim
 	url = https://github.com/Jyuart/nvim.git
-[submodule "zsh/.config/zsh/zsh-autosuggestions"]
+[submodule "zsh/.config/zsh/plugins/zsh-autosuggestions"]
 	path = zsh/.config/zsh/plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions.git
 [submodule "zsh/.config/zsh/plugins/zsh-you-should-use"]
 	path = zsh/.config/zsh/plugins/zsh-you-should-use
-	url = https://github.com/MichaelAquilina/zsh-you-should-use
+	url = https://github.com/MichaelAquilina/zsh-you-should-use.git
