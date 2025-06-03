@@ -195,3 +195,4 @@ bindsym $mod+r mode "resize"
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id picom --config ~/.config/picom/picom.config
+exec --no-startup-id feh --bg-scale --zoom fill ~/documents/wallhaven-zywe5j.jpg

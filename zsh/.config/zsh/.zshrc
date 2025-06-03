@@ -11,33 +11,39 @@ zstyle ':vcs_info:git*' formats '%F{magenta}[%b]%f'
 setopt PROMPT_SUBST
 PROMPT='%F{cyan}%~%f ${vcs_info_msg_0_} %F{yellow}❯%f '
 
-# Lines configured by zsh-newuser-install
+# History configuration
 HISTFILE=$ZDOTDIR/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
-bindkey -v
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
+
+# Some key bindings
+bindkey -e
+bindkey '^p' history-search-backward
+bindkey '^n' history-search-forward
+
+# Completions
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle :compinstall filename '$ZDOTDIR/.zshrc'
 
 autoload -Uz compinit
 compinit
-# End of lines added by compinstall
 
 # Other files
 source $ZDOTDIR/aliases
 
 # Plugins
 source $ZDOTDIR/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-alias ll='ls -lah'
 source $ZDOTDIR/plugins/zsh-you-should-use/you-should-use.plugin.zsh
+source $ZDOTDIR/plugins/zsh-completions/zsh-completions.plugin.zsh
 
-# fnm node
+# Languages & tooling
 FNM_PATH="/home/jyuart/.local/share/fnm"
 if [ -d "$FNM_PATH" ]; then
   export PATH="/home/jyuart/.local/share/fnm:$PATH"
   eval "`fnm env`"
 fi
-
-# cargo rust
 export PATH="$HOME/.cargo/bin:$PATH"
+
+# Shell integration
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source <(fzf --zsh)

@@ -1,0 +1,19 @@
+session_name: agora
+windows:
+  - window_name: nvim
+    panes:
+      - cd ~/code/agora && nvc
+
+  - window_name: apps
+    layout: even-horizontal
+    panes:
+      - cd ~/code/agora/web/
+      - cd ~/code/agora/api/
+
+  - window_name: db
+    panes:
+      - docker compose -p agora-infra restart && docker exec -it 1e2f /bin/sh
+
+  - window_name: git
+    panes:
+      - cd ~/code/agora && gst
