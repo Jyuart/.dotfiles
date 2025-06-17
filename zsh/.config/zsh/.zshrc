@@ -43,7 +43,14 @@ if [ -d "$FNM_PATH" ]; then
   eval "`fnm env`"
 fi
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.local/share/lua-language-server/bin:$PATH"
 
 # Shell integration
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source <(fzf --zsh)
+
+# SSH
+if ! pgrep -u $USER ssh-agent > /dev/null; then
+    eval "$(ssh-agent -s)"
+fi
+ssh-add ~/.ssh/id_ed25519 2>/dev/null
